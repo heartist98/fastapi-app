@@ -42,3 +42,7 @@ def add_book(book: BookCreate, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(db_book)
     return db_book
+
+@app.get("/")
+def root():
+    return {"message": "API is running"}
